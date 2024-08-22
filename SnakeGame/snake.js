@@ -17,7 +17,7 @@ var snakeBody = [];
 //food
 var foodX;
 var foodY;
-var foodShape = "square"; // "square" or "circle"
+var foodShape = "circle";
 
 var score = 0;
 
@@ -31,7 +31,7 @@ window.onload = function() {
 
     placeFood();
     document.addEventListener("keyup", changeDirection);
-    board.addEventListener("click", restartGame); // Add event listener for restart button
+    board.addEventListener("click", restartGame); 
     setInterval(update, 1000/10);
 }
 
@@ -41,7 +41,7 @@ function update() {
         context.font = "40px Arial";
         context.textAlign = "center";
         context.fillText("Game Over", board.width/2, board.height/2);
-        drawRestartButton(); // Draw restart button
+        drawRestartButton(); 
         return;
     }
 
@@ -137,7 +137,7 @@ function restartGame(event) {
     var clickY = event.clientY - rect.top;
 
     if (clickX >= board.width/2 - 50 && clickX <= board.width/2 + 50 && clickY >= board.height/2 + 20 && clickY <= board.height/2 + 60) {
-        // Restart the game
+       
         snakeX = blockSize * 2;
         snakeY = blockSize * 2;
         velocityX = 0;
